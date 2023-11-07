@@ -3,6 +3,8 @@ import 'package:flash_chat_flutter/screens/login_screen.dart';
 import 'package:flash_chat_flutter/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../components/rounded_button.dart';
+
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
   @override
@@ -90,14 +92,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
             const SizedBox(
               height: 48.0,
             ),
-            CustomMaterialButton(
+            RoundedButton(
               color: Colors.lightBlueAccent,
               label: "Log in",
               onPressed: (){
                 Navigator.pushNamed(context, LoginScreen.id);
               },
             ),
-            CustomMaterialButton(
+            RoundedButton(
                 color: Colors.blueAccent,
                 label: 'Register',
                 onPressed: () {
@@ -105,37 +107,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 },
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class CustomMaterialButton extends StatelessWidget {
-  final Color color;
-  final String label;
-  final VoidCallback onPressed;
-
-  const CustomMaterialButton({super.key, required this.color, required this.label, required this.onPressed});
-
-
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
-      child: Material(
-        elevation: 5.0,
-        color: color,
-        borderRadius: BorderRadius.circular(30.0),
-        child: MaterialButton(
-          onPressed: onPressed,
-          minWidth: 200.0,
-          height: 42.0,
-          child: Text(
-            label,
-          ),
         ),
       ),
     );
