@@ -71,58 +71,71 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 ),
                 DefaultTextStyle(
                   style: const TextStyle(
-                    fontSize: 45.0,
+                    fontSize: 50.0,
                     fontWeight: FontWeight.w900,
                     color: Colors.black,
                   ),
                   child: AnimatedTextKit(
                     animatedTexts: [
-                      TypewriterAnimatedText('Flash Chat'),
+                      TypewriterAnimatedText(
+                          'Flash Chat',
+                          speed: Duration(milliseconds: 200),
+                      ),
                     ],
+                    isRepeatingAnimation: false,
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Log In',
-                  ),
-                ),
-              ),
+            CustomMaterialButton(
+              color: Colors.lightBlueAccent,
+              label: "Log in",
+              onPressed: (){
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
+            CustomMaterialButton(
                 color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 42.0,
-                  child: Text(
-                    'Register',
-                  ),
-                ),
-              ),
+                label: 'Register',
+                onPressed: () {
+                  Navigator.pushNamed(context, RegistrationScreen.id);
+                },
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomMaterialButton extends StatelessWidget {
+  final Color color;
+  final String label;
+  final VoidCallback onPressed;
+
+  const CustomMaterialButton({super.key, required this.color, required this.label, required this.onPressed});
+
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      child: Material(
+        elevation: 5.0,
+        color: color,
+        borderRadius: BorderRadius.circular(30.0),
+        child: MaterialButton(
+          onPressed: onPressed,
+          minWidth: 200.0,
+          height: 42.0,
+          child: Text(
+            label,
+          ),
         ),
       ),
     );
