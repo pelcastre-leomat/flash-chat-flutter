@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAoTVjrGBSS2GcfxEEHZOtIsUxk2VG7Us4',
-    appId: '1:1146658515:android:f56812cc873c68f96bbe26',
-    messagingSenderId: '1146658515',
-    projectId: 'flash-chat-c4169',
-    storageBucket: 'flash-chat-c4169.appspot.com',
+    apiKey: 'AIzaSyCxzaMkxj2d5ocXuSlMSngvc4CkikEds7k',
+    appId: '1:124911448938:android:ea474c420555b20e30ab13',
+    messagingSenderId: '124911448938',
+    projectId: 'leopel-flashchat',
+    storageBucket: 'leopel-flashchat.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyB2B_TriSajI6_LIUz4-C0fXU_83Ve7HKg',
-    appId: '1:1146658515:ios:bc7999683432cfff6bbe26',
-    messagingSenderId: '1146658515',
-    projectId: 'flash-chat-c4169',
-    storageBucket: 'flash-chat-c4169.appspot.com',
+    apiKey: 'AIzaSyBcSaCtonTsTAFI65DAVtF7WjA8lmA2hqE',
+    appId: '1:124911448938:ios:1309152f0ed6274a30ab13',
+    messagingSenderId: '124911448938',
+    projectId: 'leopel-flashchat',
+    storageBucket: 'leopel-flashchat.appspot.com',
     iosBundleId: 'com.leopel.flashChatFlutter',
   );
 }
