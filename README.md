@@ -1,6 +1,6 @@
 # flash_chat_flutter
 
-A simple chat
+A simple chat 
 
 ## Getting Started
 
