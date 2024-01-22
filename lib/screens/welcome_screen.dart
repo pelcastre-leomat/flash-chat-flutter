@@ -1,4 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flash_chat_flutter/screens/login_screen.dart';
 import 'package:flash_chat_flutter/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
   @override
   void initState() {
     super.initState();
+    Firebase.initializeApp();
     controller = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
@@ -73,7 +75,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 ),
                 DefaultTextStyle(
                   style: const TextStyle(
-                    fontSize: 50.0,
+                    fontSize: 47.0,
                     fontWeight: FontWeight.w900,
                     color: Colors.black,
                   ),
